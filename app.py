@@ -22,6 +22,17 @@ def word_check():
 
     return jsonify({'result': response})
 
+@app.route("/end-game", methods=["POST"])
+def end_game():
+    """saving score, updating highscore and track num of games played"""
+    score = request.json["score"]
+    highscore = session.get("highscore", 0)
+    number_of_plays = session.get("number_of_plays", 0)
+
+    session["highscore"] = max (score, highscore)
+    session["number_of_plays"] = number_of_plays + 1
+
+    return jsonify (record= score > highscore)
 
     
 

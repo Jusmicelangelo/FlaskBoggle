@@ -6,6 +6,11 @@
     <title>Home</title>
 </head>
 <body>
+    <h4>Score: 
+        <span class="score">
+            <!-- JS will put scores here dynamically -->
+        </span>
+    </h4>
     <table class="board">
         <tbody>
           {% for row in board %}
@@ -17,13 +22,18 @@
           {% endfor %}
         </tbody>
     </table>
+    <h5>Timer:
+        <span class="timer">
+            <!-- JS will put scores here dynamically -->
+        </span>
+    </h5>
     <form class="add-word">
         <label name="guess">Guess word:</label>
         <input name="guess" class="guess" placeholder="Guess a word">
-        <button>Submit</button>
+        <button class="guess">Submit</button>
     </form>
     <p class="msg">
-        <!-- our JS will put messages here dynamically -->
+        <!-- JS will put messages here dynamically -->
     </p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
